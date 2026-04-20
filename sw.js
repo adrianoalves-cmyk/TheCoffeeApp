@@ -9,7 +9,7 @@ const CACHE_NAME = 'brew-manager-v1';
 
 // Files to cache on install (app shell)
 const PRECACHE = [
-  './brew-manager-pwa.html',
+  './theCoffee_app-pwa.html',
   './manifest.json',
   'https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap'
 ];
@@ -19,7 +19,7 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
       // Cache local files strictly; Google Fonts best-effort
-      return cache.addAll(['./brew-manager-pwa.html', './manifest.json'])
+      return cache.addAll(['./theCoffee_app-pwa.html', './manifest.json'])
         .then(() => cache.add('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap').catch(()=>{}));
     }).then(() => self.skipWaiting())
   );
@@ -61,7 +61,7 @@ self.addEventListener('fetch', event => {
       }).catch(() => {
         // Offline fallback for navigation requests
         if (event.request.mode === 'navigate') {
-          return caches.match('./brew-manager-pwa.html');
+          return caches.match('./theCoffee_app-pwa.html');
         }
       });
     })

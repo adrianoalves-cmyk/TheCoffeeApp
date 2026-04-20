@@ -1,8 +1,8 @@
 {
-  "name": "Brew Manager",
-  "short_name": "Brew",
+  "name": "The Coffee App",
+  "short_name": "The Coffee",
   "description": "Coffee shop daily operations manager",
-  "start_url": "./brew-manager-pwa.html",
+  "start_url": "./theCoffee_app-pwa.html",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#3A220F",
